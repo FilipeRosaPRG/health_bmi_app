@@ -5,7 +5,7 @@ import styles from "./style";
 export default function Title() {
     return (
         <View style={styles.boxTitle}>
-            <Text style={styles.textTitle}> IMC Calculator </Text>
+            <Text style={styles.textTitle}> BMI Calculator </Text>
         </View>
     );
 }

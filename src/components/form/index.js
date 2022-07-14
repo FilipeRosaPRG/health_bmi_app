@@ -7,16 +7,16 @@ export default function Form() {
 
     const [height, setHeight] = useState(null)
     const [weight, setWeight] = useState(null)
-    const [name, setName] = useState(null)
     const [messageImc, setMessageImc] = useState("Preencha o peso e a altura")
     const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Calcular")
     const [errorMessage, setErrorMessage] = useState(null)
-
+    const [imcList, setImcList] = useState([])
 
     function imcCalculator() {
         let heightFormat = height.replace(",", ".")
-        return setImc((weight / (heightFormat * heightFormat)).toFixed(2))
+        let totalImc = setImc((weight / (heightFormat * heightFormat)).toFixed(2))
+        setImcList((arr) => [...arr, { id: new Date().getTime(), imc: totalImc }])
     }
 
     function verificationImc() {
@@ -31,7 +31,6 @@ export default function Form() {
             imcCalculator()
             setHeight(null)
             setWeight(null)
-            setName(null)
             setMessageImc("Seu IMC é igual: ")
             setTextButton("Calcular novamente")
             setErrorMessage(null)
@@ -46,15 +45,6 @@ export default function Form() {
     return (
         <View style={styles.formContext}>
             {imc == null ? <View style={styles.form}>
-                <Text style={styles.formLabel}>Seu Nome</Text>
-                <Text style={styles.errorMessage}>{errorMessage}</Text>
-                <TextInput
-                    style={styles.formInput}
-                    value={name}
-                    onChangeText={setName}
-                    placeholder="Ex. Fulano da Silva"
-                    keyboardType="default"
-                />
                 <Text style={styles.formLabel}>Altura</Text>
                 <Text style={styles.errorMessage}>{errorMessage}</Text>
                 <TextInput
@@ -85,7 +75,6 @@ export default function Form() {
                     <ResultImc
                         messageResultImc={messageImc}
                         resultImc={imc}
-                        nameImc={setName}
                     />
                     <TouchableOpacity
                         style={styles.formButtonCalculator}

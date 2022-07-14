@@ -6,7 +6,7 @@ export default function ResultImc(props) {
 
     const onShare = async () => {
         const result = await Share.share({
-            message: "O IMC do : " + props.nameImc + "é " + props.resultImc,
+            message: "O meu IMC é: " + props.resultImc,
         })
     }
 
