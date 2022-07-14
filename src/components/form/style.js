@@ -52,6 +52,24 @@ const styles = StyleSheet.create({
     exibitionResultImc: {
         width: "100%",
         height: "50%",
+    },
+    viewFlatList: {
+        alignItems: "center"
+    },
+    listImc: {
+        marginTop: 20,
+    },
+    resultImcItem: {
+        fontSize: 24,
+        color: "red",
+        height: 50,
+        width: "100%",
+        paddingRight: 20,
+
+    },
+    textResultItemList: {
+        fontSize: 14,
+        color: "grey",
     }
 });
 
