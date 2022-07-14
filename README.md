@@ -8,6 +8,7 @@ A simple app to calculate your BMI. Application made to practice the language of
 - [x] Style
 - [x] Validates if Input Text have been filled
 - [x] [Vibration](https://reactnative.dev/docs/vibration)
+- [x] For IOS and Android (Tested on iPhone e 8)
 
 # Illustration
 
